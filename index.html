@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ثلاجتك - لحم بلدي طازج يوصل لبيتك</title>
+<meta name="description" content="ثلاجتك - أفضل لحم بلدي طازج (تيس، حوار، نعيمي، دجاج) يوصل لبابك. اطلب الآن واختر وزنك وتقطيعك.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <span class="logo-icon">🥩</span>
+      <div>
+        <span class="logo-text">ثلاجتك</span>
+        <span class="logo-sub">البلدي الأصيل</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#products">أصنافنا</a>
+      <a href="#ai-butcher">الجزار الذكي</a>
+      <a href="#subscriptions">الاشتراكات</a>
+      <a href="#about">عن ثلاجتك</a>
+    </div>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" onclick="toggleCart()">
+        <span>🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a href="admin.html" class="admin-link">لوحة التحكم</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 حلال ١٠٠٪ — طازج يومياً</div>
+    <h1 class="hero-title">
+      ثلاجتك ما تخلى<br>
+      <span class="hero-highlight">من اللحم البلدي</span>
+    </h1>
+    <p class="hero-desc">
+      أصناف بلدية أصيلة — تيس، حوار، نعيمي، دجاج — تذبح طازجة وتوصل لبابك
+      في نفس اليوم. اختر وزنك وتقطيعك وانتظرنا.
+    </p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="scrollTo('products')">اطلب الآن</button>
+      <button class="btn-secondary" onclick="openChat()">🤖 اسأل الجزار الذكي</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">+5000</span><span class="stat-label">عميل راضٍ</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">تقييم العملاء</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">يومي</span><span class="stat-label">توصيل طازج</span></div>
+    </div>
+  </div>
+  <div class="hero-images">
+    <div class="hero-img-grid">
+      <div class="hero-img-card" style="animation-delay:0s">
+        <img src="goat.png" alt="تيس بلدي" />
+        <span>التيس البلدي</span>
+      </div>
+      <div class="hero-img-card" style="animation-delay:0.2s">
+        <img src="camel.png" alt="حوار" />
+        <span>الحوار</span>
+      </div>
+      <div class="hero-img-card" style="animation-delay:0.4s">
+        <img src="sheep.png" alt="نعيمي" />
+        <span>النعيمي</span>
+      </div>
+      <div class="hero-img-card" style="animation-delay:0.6s">
+        <img src="chicken.png" alt="دجاج بلدي" />
+        <span>الدجاج البلدي</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY SECTION ===== -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>توصيل في نفس اليوم</h3>
+        <p>اطلب قبل الساعة ٢ ظهراً ويوصلك قبل المغرب</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎯</div>
+        <h3>دقة التقطيع</h3>
+        <p>كل جرام يُحسب — اختر تقطيعك بنفسك من الموقع</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌿</div>
+        <h3>ذبح يومي طازج</h3>
+        <p>لا تجميد، لا مواد حافظة — طازج دائماً</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔐</div>
+        <h3>دفع آمن ١٠٠٪</h3>
+        <p>بطاقات بنكية مؤمنة وفاتورة فورية عبر الواتساب</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS SECTION ===== -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">أصنافنا البلدية</span>
+      <h2>اختر صنفك واطلب بدقة</h2>
+      <p>كل صنف بلدي أصيل — اختر الوزن والتقطيع وخيارات الشحم</p>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <!-- Products injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== ORDER MODAL ===== -->
+<div class="modal-overlay" id="orderModal" onclick="closeOrderModal(event)">
+  <div class="order-modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-header">
+      <img id="modalImg" src="" alt="">
+      <div>
+        <h3 id="modalName"></h3>
+        <p id="modalDesc"></p>
+        <div class="modal-price"><span id="modalPricePerKg"></span> ريال/كج</div>
+      </div>
+    </div>
+    
+    <div class="order-form">
+      <!-- Weight -->
+      <div class="form-group">
+        <label>الوزن المطلوب</label>
+        <div class="weight-selector">
+          <button class="weight-btn" onclick="changeWeight(-250)">−</button>
+          <div class="weight-display">
+            <span id="weightDisplay">1000</span>
+            <span class="weight-unit">جرام</span>
+          </div>
+          <button class="weight-btn" onclick="changeWeight(250)">+</button>
+        </div>
+        <div class="weight-presets">
+          <button onclick="setWeight(500)">½ كج</button>
+          <button onclick="setWeight(1000)">١ كج</button>
+          <button onclick="setWeight(2000)">٢ كج</button>
+          <button onclick="setWeight(5000)">٥ كج</button>
+        </div>
+      </div>
+
+      <!-- Cut Type -->
+      <div class="form-group">
+        <label>نوع التقطيع</label>
+        <div class="options-grid" id="cutOptions">
+          <button class="option-btn active" onclick="selectCut(this,'كامل غير مقطع')">كامل غير مقطع</button>
+          <button class="option-btn" onclick="selectCut(this,'مقطع كباب')">مقطع كباب</button>
+          <button class="option-btn" onclick="selectCut(this,'مقطع مرق')">مقطع مرق</button>
+          <button class="option-btn" onclick="selectCut(this,'مفروم')">مفروم</button>
+          <button class="option-btn" onclick="selectCut(this,'ربع وأجزاء')">ربع وأجزاء</button>
+        </div>
+      </div>
+
+      <!-- Fat Options -->
+      <div class="form-group">
+        <label>خيارات الشحم</label>
+        <div class="options-grid" id="fatOptions">
+          <button class="option-btn active" onclick="selectFat(this,'مع الشحم الطبيعي')">مع الشحم الطبيعي</button>
+          <button class="option-btn" onclick="selectFat(this,'شحم خفيف')">شحم خفيف</button>
+          <button class="option-btn" onclick="selectFat(this,'بدون شحم')">بدون شحم</button>
+        </div>
+      </div>
+
+      <!-- Packaging -->
+      <div class="form-group">
+        <label>التغليف</label>
+        <div class="options-grid">
+          <button class="option-btn active" onclick="selectPackage(this,'أكياس عادية')">أكياس عادية</button>
+          <button class="option-btn" onclick="selectPackage(this,'تغليف فاخر')">تغليف فاخر (+15 ريال)</button>
+          <button class="option-btn" onclick="selectPackage(this,'صناديق هدايا')">صناديق هدايا (+30 ريال)</button>
+        </div>
+      </div>
+
+      <!-- Notes -->
+      <div class="form-group">
+        <label>ملاحظات خاصة (اختياري)</label>
+        <textarea id="orderNotes" placeholder="أي تعليمات إضافية للجزار..."></textarea>
+      </div>
+
+      <!-- Price Summary -->
+      <div class="price-summary">
+        <div class="price-row"><span>سعر اللحم</span><span id="meatPrice">0 ريال</span></div>
+        <div class="price-row"><span>التغليف</span><span id="packagePrice">مجاني</span></div>
+        <div class="price-row"><span>التوصيل</span><span>25 ريال</span></div>
+        <div class="price-row total"><span>المجموع</span><span id="totalPrice">0 ريال</span></div>
+      </div>
+
+      <button class="btn-add-cart" onclick="addToCart()">🛒 أضف للسلة</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== AI BUTCHER CHAT ===== -->
+<section class="ai-section" id="ai-butcher">
+  <div class="container">
+    <div class="ai-wrapper">
+      <div class="ai-info">
+        <div class="ai-avatar">🤖</div>
+        <h2>الجزار الذكي</h2>
+        <p>
+          مو عارف كم كيلو تحتاج؟ اخبرني بعدد ضيوفك ونوع الوجبة
+          وأنا أحسب لك الكمية المثالية وأرشح لك الصنف الأنسب.
+        </p>
+        <div class="ai-features">
+          <div class="ai-feat"><span>✅</span> حساب الكمية حسب عدد الأشخاص</div>
+          <div class="ai-feat"><span>✅</span> ترشيح الصنف حسب المناسبة</div>
+          <div class="ai-feat"><span>✅</span> نصائح الطبخ والتحضير</div>
+          <div class="ai-feat"><span>✅</span> مقارنة الأسعار والأصناف</div>
+        </div>
+      </div>
+      <div class="ai-chat-box" id="aiChatBox">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg bot">
+            <div class="bot-avatar">🤖</div>
+            <div class="msg-content">مرحباً بك في ثلاجتك! أنا جزارك الذكي. كيف أقدر أساعدك اليوم؟ 😊</div>
+          </div>
+          <div class="chat-msg bot">
+            <div class="bot-avatar">🤖</div>
+            <div class="msg-content">اخبرني مثلاً: "عندي ١٠ ضيوف وأبي أسوي مندي" وأنا أرشح لك الكمية والصنف المناسب.</div>
+          </div>
+        </div>
+        <div class="chat-quick-btns">
+          <button onclick="sendQuick('كم كيلو لـ 10 ضيوف؟')">كم كيلو لـ ١٠ ضيوف؟</button>
+          <button onclick="sendQuick('أيش الفرق بين التيس والنعيمي؟')">التيس vs النعيمي</button>
+          <button onclick="sendQuick('أبي أسوي مندي')">وصفة المندي</button>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" id="chatInput" placeholder="اكتب سؤالك هنا..." onkeypress="handleChatKey(event)">
+          <button class="chat-send" onclick="sendChat()">إرسال</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUBSCRIPTIONS ===== -->
+<section class="sub-section" id="subscriptions">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-badge red">الاشتراكات الشهرية</span>
+      <h2>ثلاجتك ما تخلى من اللحم</h2>
+      <p>جدّل طلباتك شهرياً وادفع أقل — ثلاجتك دايم مليانة</p>
+    </div>
+    <div class="sub-cards">
+      <div class="sub-card">
+        <div class="sub-badge">الأساسي</div>
+        <div class="sub-price"><span>299</span> ريال/شهر</div>
+        <ul>
+          <li>✅ ٢ كج أسبوعياً (٨ كج/شهر)</li>
+          <li>✅ صنف واحد حسب اختيارك</li>
+          <li>✅ توصيل مجاني</li>
+          <li>✅ تخفيض ١٠٪</li>
+        </ul>
+        <button class="btn-sub" onclick="openSubscriptionForm('الأساسي', 299)">اشترك الآن</button>
+      </div>
+      <div class="sub-card featured">
+        <div class="sub-badge gold">الأكثر طلباً ⭐</div>
+        <div class="sub-price"><span>549</span> ريال/شهر</div>
+        <ul>
+          <li>✅ ٤ كج أسبوعياً (١٦ كج/شهر)</li>
+          <li>✅ صنفين حسب اختيارك</li>
+          <li>✅ توصيل مجاني مرتين أسبوعياً</li>
+          <li>✅ تخفيض ١٥٪</li>
+          <li>✅ أولوية التوصيل</li>
+        </ul>
+        <button class="btn-sub gold" onclick="openSubscriptionForm('العائلي', 549)">اشترك الآن</button>
+      </div>
+      <div class="sub-card">
+        <div class="sub-badge">الضيافة</div>
+        <div class="sub-price"><span>999</span> ريال/شهر</div>
+        <ul>
+          <li>✅ ٨ كج أسبوعياً (٣٢ كج/شهر)</li>
+          <li>✅ جميع الأصناف</li>
+          <li>✅ توصيل يومي مجاني</li>
+          <li>✅ تخفيض ٢٠٪</li>
+          <li>✅ تغليف فاخر مجاني</li>
+          <li>✅ مدير حساب خاص</li>
+        </ul>
+        <button class="btn-sub" onclick="openSubscriptionForm('الضيافة', 999)">اشترك الآن</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CART PANEL ===== -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>سلة الطلبات 🛒</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total-row">
+      <span>المجموع الكلي:</span>
+      <span id="cartTotal">0 ريال</span>
+    </div>
+    <button class="btn-checkout" onclick="openCheckout()">إتمام الطلب والدفع</button>
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <div>🛒</div>
+    <p>سلتك فارغة — ابدأ بإضافة أصنافك</p>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="modal-overlay" id="checkoutModal" onclick="closeCheckoutModal(event)">
+  <div class="checkout-modal">
+    <button class="modal-close" onclick="closeCheckout()">✕</button>
+    <h2>إتمام الطلب</h2>
+    
+    <div class="checkout-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>الاسم الكامل *</label>
+          <input type="text" id="cName" placeholder="محمد أحمد العتيبي">
+        </div>
+        <div class="form-group">
+          <label>رقم الجوال *</label>
+          <input type="tel" id="cPhone" placeholder="05XXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>العنوان التفصيلي *</label>
+        <input type="text" id="cAddress" placeholder="المدينة، الحي، الشارع، رقم المنزل">
+      </div>
+      <div class="form-group">
+        <label>وقت التوصيل المفضل</label>
+        <select id="cTime">
+          <option>في أقرب وقت</option>
+          <option>بعد العصر (4-6 عصراً)</option>
+          <option>بعد المغرب (7-9 مساءً)</option>
+          <option>صباح الغد (8-12 ظهراً)</option>
+        </select>
+      </div>
+
+      <div class="payment-section">
+        <h4>💳 معلومات الدفع</h4>
+        <div class="form-group">
+          <label>رقم البطاقة</label>
+          <input type="text" id="cardNum" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" oninput="formatCard(this)">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>تاريخ الانتهاء</label>
+            <input type="text" id="cardExp" placeholder="MM/YY" maxlength="5" oninput="formatExp(this)">
+          </div>
+          <div class="form-group">
+            <label>CVV</label>
+            <input type="text" id="cardCvv" placeholder="XXX" maxlength="3">
+          </div>
+        </div>
+        <div class="payment-icons">
+          <span class="pay-icon">🏦 مدى</span>
+          <span class="pay-icon">💳 Visa</span>
+          <span class="pay-icon">💳 Mastercard</span>
+        </div>
+      </div>
+
+      <div class="order-summary-box" id="checkoutSummary"></div>
+
+      <button class="btn-pay" id="payBtn" onclick="processPayment()">
+        <span id="payBtnText">ادفع الآن وتأكيد الطلب</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUBSCRIPTION MODAL ===== -->
+<div class="modal-overlay" id="subModal" onclick="closeSubModal(event)">
+  <div class="checkout-modal">
+    <button class="modal-close" onclick="closeSubModal()">✕</button>
+    <h2>اشتراك <span id="subPlanName"></span></h2>
+    <div class="checkout-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>الاسم الكامل *</label>
+          <input type="text" id="subName" placeholder="اسمك الكريم">
+        </div>
+        <div class="form-group">
+          <label>رقم الجوال *</label>
+          <input type="tel" id="subPhone" placeholder="05XXXXXXXX">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>العنوان</label>
+        <input type="text" id="subAddress" placeholder="المدينة، الحي">
+      </div>
+      <div class="form-group">
+        <label>الأصناف المفضلة</label>
+        <div class="options-grid">
+          <button class="option-btn" onclick="toggleSubMeat(this,'تيس')">🐐 تيس</button>
+          <button class="option-btn" onclick="toggleSubMeat(this,'حوار')">🐪 حوار</button>
+          <button class="option-btn" onclick="toggleSubMeat(this,'نعيمي')">🐑 نعيمي</button>
+          <button class="option-btn" onclick="toggleSubMeat(this,'دجاج')">🐓 دجاج</button>
+        </div>
+      </div>
+      <div class="payment-section">
+        <h4>💳 معلومات الدفع الشهري</h4>
+        <div class="form-group">
+          <label>رقم البطاقة</label>
+          <input type="text" id="subCardNum" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" oninput="formatCard(this)">
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>تاريخ الانتهاء</label><input type="text" id="subCardExp" placeholder="MM/YY" maxlength="5" oninput="formatExp(this)"></div>
+          <div class="form-group"><label>CVV</label><input type="text" id="subCardCvv" placeholder="XXX" maxlength="3"></div>
+        </div>
+      </div>
+      <div class="price-summary">
+        <div class="price-row total"><span>رسوم الاشتراك الشهري</span><span id="subPrice">0 ريال</span></div>
+      </div>
+      <button class="btn-pay" onclick="processSubscription()">اشترك وادفع الآن</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="successModal">
+  <div class="success-modal">
+    <div class="success-icon">✅</div>
+    <h2 id="successTitle">تم الطلب بنجاح!</h2>
+    <p id="successMsg">طلبك قيد التجهيز. سيتواصل معك المندوب قريباً.</p>
+    <div class="invoice-box" id="invoiceBox"></div>
+    <button class="btn-primary" onclick="closeSuccess()">ممتاز، شكراً!</button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">🥩 ثلاجتك</div>
+        <p>لحم بلدي أصيل يوصل لبابك — طازج يومياً بضمان الجودة والحلال.</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <a href="#products">أصنافنا</a>
+        <a href="#subscriptions">الاشتراكات</a>
+        <a href="#ai-butcher">الجزار الذكي</a>
+        <a href="admin.html">لوحة الإدارة</a>
+      </div>
+      <div class="footer-contact">
+        <h4>للتواصل</h4>
+        <p>📱 واتساب: 0501234567</p>
+        <p>📧 info@thallajatak.sa</p>
+        <p>🕐 يومياً ٨ص – ١١م</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 ثلاجتك — جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
